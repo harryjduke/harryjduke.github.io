@@ -2422,6 +2422,10 @@ select {
   padding-bottom:1px
 }
 
+.pb-10 {
+  padding-bottom:2.5rem
+}
+
 .pb-2 {
   padding-bottom:0.5rem
 }
@@ -4576,12 +4580,6 @@ pre {
 
 .hover\:opacity-90:hover {
   opacity:0.9
-}
-
-.hover\:shadow-none:hover {
-  --tw-shadow:0 0 #0000;
-  --tw-shadow-colored:0 0 #0000;
-  box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
 
 .hover\:shadow-xl:hover {

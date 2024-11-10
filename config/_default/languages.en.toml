@@ -1,0 +1,22 @@
+disabled = false
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Harry Duke"
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "2 January 2006"
+description = "Harry Duke's personal portfolio"
+
+[params.author]
+headline = "Computer Science for Games student focused on technical games programming, from gameplay systems and AI behaviour to physics and engine development."
+bio = "I am a third-year B.Sc. (Hons) Computer Science for Games student at the University of Brighton. I specialise in technical games programming and have worked on projects involving engine development, physics simulations, AI behaviour and gameplay programming. I have experience using a variety of tools for game development such as Unreal Engine, Unity, Blender and SDL. I have developed game prototypes with teams of up to five people, strengthening my teamwork and project management skills. I am currently seeking a graduate job for next year, following the completion of my university degree."
+name = "Harry Duke"
+links = [
+    { email = "mailto:harryjduke@gmail.com" },
+    { github = "https://github.com/harryjduke" },
+    { linkedin = "https://www.linkedin.com/in/harryduke/" },
+]

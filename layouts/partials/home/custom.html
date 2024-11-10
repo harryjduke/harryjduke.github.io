@@ -1,0 +1,107 @@
+{{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
+<article class="flex flex-col items-center justify-center text-center h-screen relative">
+  <div class="relative">
+    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
+    <div class="mx-auto max-w-7xl p-0">
+      <div class="relative sm:overflow-hidden">
+        <!-- Background Image -->
+        <div class="fixed inset-x-0 top-0 " style="z-index:-10">
+          {{ $homepageImage := "" }}
+          {{ with .Site.Params.defaultBackgroundImage }}
+            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+              {{ $homepageImage = resources.GetRemote . }}
+            {{ else }}
+              {{ $homepageImage = resources.Get . }}
+            {{ end }}
+          {{ end }}
+          {{ with .Site.Params.homepage.homepageImage }}
+            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+              {{ $homepageImage = resources.GetRemote . }}
+            {{ else }}
+              {{ $homepageImage = resources.Get . }}
+            {{ end }}
+          {{ end }}
+          {{ if $homepageImage }}
+          <img class="w-full h-full object-cover m-0 nozoom" src="{{ $homepageImage.RelPermalink }}" role="presentation">
+          {{/*<div class="absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>*/}}
+          {{/*<div class="opacity-60 absolute inset-0 h-[1000px] bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal"></div>*/}}
+          {{ end }}
+        </div>
+        <header class="relative px-1 py-1 flex flex-col items-center mb-3">
+          <!-- Author Image -->
+          {{ with .Site.Params.Author.image }}
+            {{ $authorImage := "" }}
+            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+              {{ $authorImage = resources.GetRemote . }}
+            {{ else }}
+              {{ $authorImage = resources.Get . }}
+            {{ end }}
+            {{ if $authorImage }}
+              {{ if not $disableImageOptimization }}
+                {{ $authorImage = $authorImage.Fill (print "288x288 q" ( $.Site.Params.Author.imagequality | default "96" )) }}
+              {{ end }}
+              <img class="mb-2 rounded-full h-36 w-36" width="144" height="144" alt="{{ $.Site.Params.Author.name | default " Author" }}" src="{{ $authorImage.RelPermalink }}" />
+            {{ end }}
+          {{ end }}
+          <!-- Author Name -->
+          <h1 class="text-9xl font-extrabold leading-snug">
+            {{ .Site.Params.Author.name | default .Site.Title }}
+          </h1>
+          <!-- Headline -->
+          {{ with .Site.Params.Author.headline }}
+          <h2 class="text-xl text-neutral-500 dark:text-neutral-200">
+            {{ . | markdownify }}
+          </h2>
+          {{ end }}
+          <!-- Links -->
+          <div class="mt-1 text-2xl">
+            {{ partialCached "author-links.html" . }}
+          </div>
+        </header>
+        <section class="prose dark:prose-invert flex-grow">{{ .Content }}</section>
+      </div>
+    </div>
+  </div>
+  <!-- Scroll Down Button -->
+  <div id="scroll-button" class="absolute bottom-0 opacity-0 transition-opacity text-4xl mb-3 text-neutral-400 dark:text-neutral-200">
+    <a href="#featured-projects" class="hover:text-primary-700 dark:hover:text-primary-400">
+      {{ partial "icon.html" "down" }}
+    </a>
+  </div>
+</article>
+<section id="featured-projects" class = "mt-auto">
+  {{ partial "featured-projects/main.html" . }}
+</section>
+
+<!-- Optional Background Blur -->
+{{ if .Site.Params.homepage.layoutBackgroundBlur | default false }}
+<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl "></div>
+<script>
+  window.addEventListener('scroll', function (e) {
+    var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var background_blur = document.getElementById('background-blur');
+    background_blur.style.opacity = (scroll / 300);
+  });
+</script>
+
+<!-- Hide Scroll Down Button -->
+<script>
+// Intersection Observer to detect when the #recent-articles section is in view
+const observer = new IntersectionObserver((entries) => {
+  const scrollButton = document.getElementById("scroll-button");
+  entries.forEach(entry => {
+    // Fade in the button when the recent articles section is not in view
+    if (!entry.isIntersecting) {
+      scrollButton.style.opacity = 1;
+    } else {
+      scrollButton.style.opacity = 0;
+    }
+  });
+}, {
+  threshold: 0.1, // Adjust the threshold to detect when the section is visible
+});
+
+// Observe the recent articles section
+observer.observe(document.getElementById("featured-projects"));
+</script>
+{{ end }}

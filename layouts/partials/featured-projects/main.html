@@ -1,8 +1,8 @@
-{{ $recentArticles := 5 }}
+{{ $featuredProjects := 5 }}
 {{ $showMoreLinkDest := "/projects/" }}
-{{ if .Site.Params.homepage.showRecent | default false }}
-{{ if index .Site.Params.homepage "showRecentItems" }}
-{{ $recentArticles = .Site.Params.homepage.showRecentItems }}
+{{ if .Site.Params.homepage.showFeatured | default false }}
+{{ if index .Site.Params.homepage "showFeaturedItems" }}
+{{ $featuredProjects = .Site.Params.homepage.showFeaturedItems }}
 {{ end }}
 <h2 class="pt-8 text-4xl font-extrabold mb-10">Projects</h2>
 
@@ -15,13 +15,13 @@
 {{ end }}
 
 {{ if .Site.Params.homepage.showMoreLink | default false }}
-{{ if index .Site.Params.homepage "showRecentItems" }}
+{{ if index .Site.Params.homepage "showFeaturedProjectItems" }}
 {{ $showMoreLinkDest = .Site.Params.homepage.showMoreLinkDest }}
 {{ end }}
 <div class="mt-10 flex justify-center">
   <a href="{{ $showMoreLinkDest }}">
     <button
-      class="bg-transparent hover:text-primary-500 prose dark:prose-invert font-semibold hover:text-white py-2 px-4 border border-primary-500 rounded">
+      class="hover:text-primary-500 prose dark:prose-invert font-semibold py-2 px-4 border border-primary-500 rounded shadow-xl hover:shadow-lg">
       {{ i18n "recent.show_more" | markdownify }}
     </button>
   </a>

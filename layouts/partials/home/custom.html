@@ -72,6 +72,9 @@
 <section id="featured-projects" class = "mt-auto">
   {{ partial "featured-projects/main.html" . }}
 </section>
+<section id="bio" class="prose dark:prose-invert mt-auto">
+  {{ partial "bio.html" . }}
+</section>
 
 <!-- Optional Background Blur -->
 {{ if .Site.Params.homepage.layoutBackgroundBlur | default false }}

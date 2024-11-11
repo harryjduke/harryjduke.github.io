@@ -1,0 +1,7 @@
+{{ if .Params.download }}
+  {{ partial "header/header-option-download.html" .}}
+{{ else if .HasChildren }} 
+  {{ partial "header/header-option-nested.html" . }}
+{{ else }}
+  {{ partial "header/header-option-simple.html" . }}
+{{ end }}

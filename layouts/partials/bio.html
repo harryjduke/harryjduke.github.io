@@ -1,0 +1,20 @@
+{{ if .Site.Params.homepage.showBio | default false }}
+<div class="flex items-bottom">
+<h2 class="pt-11 text-4xl font-extrabold pb-5 m-0">
+    {{ .Site.Params.Author.bioTitle | default "About Me" }}
+</h2>
+{{ if .Site.Params.homepage.showBioDownload | default false}}
+<a href="/cv_harry-duke.pdf" download="CV_Harry-Duke"
+    class=" flex items-center text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 pt-5">
+    <span  class="ml-5 mr-1 text-inherit" >
+        {{ partial "icon.html" "download" }}
+    </span>
+    <p class="m-2 text-base font-medium text-inherit" title="Download CV">
+        CV
+    </p>
+</a></div>
+{{ end }}
+<p class="mt-0">
+    {{ .Site.Params.Author.bio }}
+</p>
+{{ end }}

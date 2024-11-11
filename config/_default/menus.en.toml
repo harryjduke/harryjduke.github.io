@@ -1,5 +1,19 @@
 [[main]]
 none = "none"
 
+[[main]]
+name = "Projects"
+pageRef = "projects"
+identifier = "XGPgaRdOsh"
+weight = 9999
+
+[[main]]
+name = "CV"
+pre = "download"
+params = { download = true }
+URL = "/CV_Harry-Duke.pdf"
+identifier = "4d5AFsciao"
+weight = 9999
+
 [[footer]]
 none = "none"

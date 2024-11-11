@@ -10,6 +10,7 @@ giteaDefaultServer = "https://git.fsfe.org"
 forgejoDefaultServer = "https://v8.next.forgejo.org"
 defaultBackgroundImage = "backgrounds/purple-cyan-topo-blur.jpg"
 
+
 [header]
 layout = "custom"
 
@@ -22,13 +23,16 @@ showScrollToTop = true
 
 [homepage]
 layout = "custom"
-showRecent = true
-showRecentItems = 5
+showFeatured = true
+showFeaturedItems = 5
 showMoreLink = true
 showMoreLinkDest = "/projects/"
 cardView = true
 cardViewScreenWidth = false
 layoutBackgroundBlur = true
+showBio = true
+showBioDownload = true
+downloadURL = "/CV_Harry-Duke.pdf"
 
 [article]
 showDate = true

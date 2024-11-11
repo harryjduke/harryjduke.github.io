@@ -1618,6 +1618,10 @@ select {
   margin-left:0.75rem
 }
 
+.ml-5 {
+  margin-left:1.25rem
+}
+
 .ml-6 {
   margin-left:1.5rem
 }
@@ -2422,10 +2426,6 @@ select {
   padding-bottom:1px
 }
 
-.pb-10 {
-  padding-bottom:2.5rem
-}
-
 .pb-2 {
   padding-bottom:0.5rem
 }
@@ -2442,6 +2442,10 @@ select {
   padding-bottom:1rem
 }
 
+.pb-5 {
+  padding-bottom:1.25rem
+}
+
 .pl-2 {
   padding-left:0.5rem
 }
@@ -2452,6 +2456,10 @@ select {
 
 .pr-\[24px\] {
   padding-right:24px
+}
+
+.pt-11 {
+  padding-top:2.75rem
 }
 
 .pt-16 {
@@ -2468,6 +2476,10 @@ select {
 
 .pt-4 {
   padding-top:1rem
+}
+
+.pt-5 {
+  padding-top:1.25rem
 }
 
 .pt-8 {
@@ -4580,6 +4592,12 @@ pre {
 
 .hover\:opacity-90:hover {
   opacity:0.9
+}
+
+.hover\:shadow-lg:hover {
+  --tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
 
 .hover\:shadow-xl:hover {

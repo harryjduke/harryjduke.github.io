@@ -1,6 +1,6 @@
 colorScheme = "catppuccin-macchiato"
-defaultAppearance = "light"
-autoSwitchAppearance = true
+defaultAppearance = "dark"
+autoSwitchAppearance = false
 enableSearch = true
 enableCodeCopy = false
 replyByEmail = false
@@ -24,7 +24,7 @@ showScrollToTop = true
 [homepage]
 layout = "custom"
 showFeatured = true
-showFeaturedItems = 5
+showFeaturedItems = 6
 showMoreLink = true
 showMoreLinkDest = "/projects/"
 cardView = true
@@ -59,6 +59,7 @@ showTaxonomies = true
 showAuthorsBadges = false
 showWordCount = false
 showZenMode = false
+showLinks = true
 
 [list]
 showHero = true

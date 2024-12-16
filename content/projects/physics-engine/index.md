@@ -4,6 +4,9 @@ date: 2024-08-16
 draft: false
 summary: "A physics subsystem written in C++ using SDL2 that implements both linear and angular rigid body dynamics along with collision detection and response."
 tags: ["C++", "SDL", "CMake", "Engine Development"]
+params:
+    links: 
+        - github: "https://github.com/harryjduke/physics-engine"
 ---
 ## Goal
 The goal of this project was to develop a 2D rigid body physics subsystem that accurately simulates linear and angular motion, including reactions to forces and collisions.  I created my subsystem as a modification of [XCube2D](https://github.com/AlmasB/xcube2d), a simple C++ game engine based on [SDL2](https://github.com/libsdl-org/SDL), and then built the engine as a library that could be included in a game. To manage the building of the engine library and the game executable as well as the [SDL2](https://github.com/libsdl-org/SDL) dependencies, I used the [CMake](https://cmake.org/) build system, which I set up to make the build process as easy as possible across different platforms.

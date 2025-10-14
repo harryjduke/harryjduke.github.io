@@ -6,7 +6,7 @@ summary: "A horror game made using Unreal Engine as part of a five person group.
 tags: ["C++", "Unreal Engine", "AI"]
 params:
     links: 
-        - github: "https://github.com/harryjduke/CI536_prototype"
+        - GitHub: "https://github.com/harryjduke/CI536_prototype"
 ---
 
 The goal of this project was to design and develop a game as part of a group. To do this we had to manage the team, assigning parts of the project to different group members and plan features that needed to be developed for the project to be successful. We decided to create a horror game with puzzles formed from enemy NPCs. My personal roles included developing the enemy AI, designing the puzzles and project management.

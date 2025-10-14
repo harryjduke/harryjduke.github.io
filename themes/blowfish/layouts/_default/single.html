@@ -21,9 +21,6 @@
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
         {{ .Title | emojify }}
       </h1>
-      {{ if (.Params.showLinks | default (.Site.Params.article.showLinks | default false)) }}
-      {{ partial "project-links.html" . }}
-      {{ end }}
     </div>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       {{ partial "article-meta/basic.html" (dict "context" . "scope" "single") }}
@@ -83,6 +80,10 @@
       <div class="min-w-0 min-h-0 max-w-fit">
         
         {{ partial "series/series.html" . }}
+
+        {{ if (.Params.showLinks | default (.Site.Params.article.showLinks | default false)) }}
+          {{ partial "project-links.html" . }}
+        {{ end }}
 
         <div class="article-content max-w-prose mb-20">
           {{ .Content }}

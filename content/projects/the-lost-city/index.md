@@ -6,7 +6,7 @@ summary: "An exploration/puzzle game made in Unreal Engine with a focus on level
 tags: ["Unreal Engine", "Level Design"]
 params:
     links: 
-        - github: "https://github.com/harryjduke/the-lost-city"
+        - GitHub: "https://github.com/harryjduke/the-lost-city"
 ---
 ## Goal
 The goal of this project was to create an short puzzle game in Unreal Engine that would allow me to develop my level design skills. While creating the level I found some opportunities to improve my workflow and build the level faster by developing an asset that allowed me to quickly create different variations of buildings. The main gameplay loop consists of a series of puzzles where the player finds their path forward blocked and then explore to find the triggers needed to unblock it.

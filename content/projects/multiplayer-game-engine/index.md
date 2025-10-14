@@ -1,6 +1,6 @@
 ---
 title: "Multiplayer Game Engine"
-date: 2024-10-22
+date: 2025-01-14
 draft: false
 summary: "A multiplayer game engine with a C++ server and Java client that automates object replication and serialisation."
 tags: ["C++", "SDL", "Networking", "Test-Driven Development", "MessagePack", "GoogleTest"]

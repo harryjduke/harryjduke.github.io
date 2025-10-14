@@ -3,8 +3,10 @@
     --color-neutral-50: 184, 192, 224;
     --color-neutral-100: 165, 173, 203;
     --color-neutral-200: 147, 151, 183;
-    --color-neutral-300: 128, 135, 162;
-    --color-neutral-400: 110, 115, 141;
+    /*  --color-neutral-300: 128, 135, 162; */
+    --color-neutral-300: 165, 173, 203; /* Main Text */
+/*  --color-neutral-400: 110, 115, 141; */
+    --color-neutral-400: 147, 151, 183; /* Navigation Text */
     --color-neutral-500: 91, 96, 120;
     --color-neutral-600: 73, 77, 100;
     --color-neutral-700: 54, 58, 79;

@@ -6,6 +6,8 @@ theme = "blowfish"
 baseURL = "https://harryjduke.com/"
 defaultContentLanguage = "en"
 
+timeout = 100
+
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
 
 enableRobotsTXT = true

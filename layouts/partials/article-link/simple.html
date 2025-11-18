@@ -94,7 +94,8 @@
       </div>
       {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        {{ .Summary | plainify }}
+        <!-- Changed from plainify to safeHTML to fix issues with rendering single quotes -->
+        {{ .Summary | safeHTML }}
       </div>
       {{ end }}
     </div>

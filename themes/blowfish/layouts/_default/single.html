@@ -55,6 +55,10 @@
         {{- end -}}
       {{ end }}
 
+      {{ if (.Params.showLinks | default (.Site.Params.article.showLinks | default false)) }}
+      {{ partial "project-links.html" . }}
+      {{ end }}
+
       {{ if or $taxonomyLink $showAuthor }}
       <div class="mb-5"></div>
       {{ end }}
@@ -81,9 +85,6 @@
         
         {{ partial "series/series.html" . }}
 
-        {{ if (.Params.showLinks | default (.Site.Params.article.showLinks | default false)) }}
-          {{ partial "project-links.html" . }}
-        {{ end }}
 
         <div class="article-content max-w-prose mb-20">
           {{ .Content }}
